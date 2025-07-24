@@ -16,13 +16,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: httpd-service-ingress
+  name: myapp-service-ingress
 spec:
   selector:
-    app: httpd
+    app: myapp
   type: ClusterIP
   ports:
-  - name: httpd
+  - name: myapp
     protocol: TCP
     port: 80
-    targetPort: 8080
+    targetPort: 80

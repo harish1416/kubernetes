@@ -19,12 +19,21 @@ spec:
           ports:
             - containerPort: 5432
           env:
-            - name: POSTGRES_USER
-              value: admin
-            - name: POSTGRES_PASSWORD
-              value: secret123
             - name: POSTGRES_DB
-              value: demo
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-cm
+                  key: dbname
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgress
+                  key: username
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgress
+                  key: password
             - name: PGDATA
               value: /var/lib/postgresql/data
           volumeMounts:

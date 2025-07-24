@@ -8,7 +8,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /data/postgres
+    path: /mnt/data/postgres
   storageClassName: standard
 ---
 apiVersion: v1
@@ -20,5 +20,5 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 2Gi
+      storage: 1Gi
   storageClassName: standard

@@ -16,10 +16,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: myapp-service-ingress
+  name: httpd-service-ingress
 spec:
   selector:
-    app: myapp
+    app: httpd
   type: ClusterIP
   ports:
   - name: myapp

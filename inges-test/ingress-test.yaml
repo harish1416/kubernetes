@@ -19,10 +19,10 @@ spec:
             name: nginx-service-ingress
             port:
               number: 80
-      - path: /myapp
+      - path: /httpd
         pathType: Prefix
         backend:
           service:
-            name: myapp-service-ingress
+            name: httpd-service-ingress
             port:
               number: 8080

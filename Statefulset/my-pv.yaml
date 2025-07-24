@@ -10,16 +10,15 @@ spec:
   hostPath:
     path: /data/postgres
   storageClassName: standard
-# ---
+---
 # apiVersion: v1
-# kind: PersistentVolume
+# kind: PersistentVolumeClaim
 # metadata:
-#   name: postgres-pv-1
+#   name: postgres-pvc
 # spec:
-#   capacity:
-#     storage: 2Gi
 #   accessModes:
 #     - ReadWriteOnce
-#   hostPath:
-#     path: /mnt/data/postgres
+#   resources:
+#     requests:
+#       storage: 2Gi
 #   storageClassName: standard

@@ -4,4 +4,4 @@ metadata:
   name: postgres-cm
 data:
   dbname: demo
-  pgdataPath: /var/lib/postgresql/data/pgdata
+  pgdataPath: /var/lib/postgresql/data

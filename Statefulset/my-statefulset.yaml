@@ -34,15 +34,9 @@ spec:
                 secretKeyRef:
                   name: postgress
                   key: password
-            - name: PGDATA
-              valueFrom:
-                configMapKeyRef:
-                  name: postgres-cm
-                  key: pgdataPath
           volumeMounts:
             - name: postgres-storage
               mountPath: /var/lib/postgresql/data
-              subPath: pgdata
   volumeClaimTemplates:
     - metadata:
         name: postgres-storage

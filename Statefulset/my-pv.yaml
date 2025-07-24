@@ -10,16 +10,16 @@ spec:
   hostPath:
     path: /mnt/data/postgres
   storageClassName: standard
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: postgres-pv-1
-spec:
-  capacity:
-    storage: 2Gi
-  accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: /mnt/data/postgres
-  storageClassName: standard
+# ---
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: postgres-pv-1
+# spec:
+#   capacity:
+#     storage: 2Gi
+#   accessModes:
+#     - ReadWriteOnce
+#   hostPath:
+#     path: /mnt/data/postgres
+#   storageClassName: standard

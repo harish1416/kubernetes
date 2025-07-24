@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-replicaset
+  labels:
+    app: nginx
+    env: dev
+spec:
+  selector :
+    matchLabels :
+      app: nginx
+  replicas: 3
+  template:
+    metadata:
+      name: myfirst-pod
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "64Mi"
+            limits:
+              cpu: "500m"
+              memory: "128Mi"
+          ports:
+            - containerPort: 80
+              name: nginx
+              protocol: TCP
+          

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nodeapp-replicaset
+  labels:
+    app: nodeapp
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: nodeapp-pod
+      labels:
+       app: nodeapp
+    spec:
+      containers:
+        - name: weguide
+          image: httpd
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nodeapp

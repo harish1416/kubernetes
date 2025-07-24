@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deploy
+spec:
+  strategy :
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
+  selector:
+    matchLabels :
+      app: myapp
+  replicas: 2
+  template:
+    metadata: 
+      labels:
+        app: myapp
+        version: "3.0"
+    spec:
+      containers:
+        - name: myapp
+          image: harish1416/myapp:3.0
+          ports:
+            - containerPort: 80
+              name: httpd
+              protocol: TCP
+    

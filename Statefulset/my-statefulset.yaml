@@ -35,10 +35,7 @@ spec:
                   name: postgress
                   key: password
             - name: PGDATA
-              valueFrom:
-                configMapKeyRef:
-                  name: postgres-cm
-                  key: pgdataPath
+              value: /var/lib/postgresql/data
           volumeMounts:
             - name: postgres-storage
               mountPath: /var/lib/postgresql/data
@@ -50,4 +47,4 @@ spec:
         storageClassName: standard
         resources:
           requests:
-            storage: 1Gi
+            storage: 2Gi

@@ -8,9 +8,9 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /data/postgres
+    path: /data/postgres-0
   storageClassName: standard
----
+
 # apiVersion: v1
 # kind: PersistentVolumeClaim
 # metadata:
